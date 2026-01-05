@@ -336,7 +336,7 @@ h1 {
 
     .scroll-img {
         position: absolute;
-        top: 30%;
+        top: 40%;
         left: 50%;
         transform: translateX(-50%);
         width: 470px;
