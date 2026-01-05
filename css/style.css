@@ -9,7 +9,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -30,7 +31,7 @@ body {
     height: 100vh;
     overflow: hidden;
     z-index: 1;
-    
+
 }
 
 .inicio img {
@@ -45,13 +46,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(
-        to bottom,
-        #0b1220,
-        #071026de,
-        #071028a0,
-        #07102600
-    );
+    background: linear-gradient(to bottom,
+            #0b1220,
+            #071026de,
+            #071028a0,
+            #07102600);
 }
 
 
@@ -74,6 +73,41 @@ body {
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
+}
+
+.menu-item a p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+}
+
+.hover-underline-animation.center::after {
+    transform-origin: bottom center;
+}
+
+.hover-underline-animation.center:hover::after {
+    transform-origin: bottom center;
 }
 
 .scroll-type {
@@ -111,7 +145,8 @@ body {
 
 .scroll-img {
     position: absolute;
-    top: 20%;               /* fica acima do texto */
+    top: 20%;
+    /* fica acima do texto */
     left: 50%;
     transform: translateX(-50%);
     width: 570px;
@@ -188,7 +223,8 @@ h1 {
     overflow: hidden;
 }
 
-.track, .track2 {
+.track,
+.track2 {
     display: flex;
     gap: 1rem;
     animation: scroll var(--slide-speed) linear infinite;
@@ -199,8 +235,13 @@ h1 {
 }
 
 @keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 .slide {
@@ -218,13 +259,119 @@ h1 {
 }
 
 /* RESPONSIVO */
-@media (max-width: 768px) {
+/*
+@media (max-width: 2560px) {
+    .scroll-type {
+        top: 22%;
+        font-size: 600px;
+    }
+    .scroll-img {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 970px;
+        height: 1100px;
+        overflow: hidden;
+        z-index: 6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-item a {
+        font-size: 40px;
+    }
+}*/
+
+@media (max-width: 1441px) {
+    .scroll-img {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 770px;
+        height: 900px;
+        overflow: hidden;
+        z-index: 6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-item a {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 1025px) {
+    .scroll-type {
+        top: 22%;
+        font-size: 260px;
+    }
+}
+
+@media (max-width: 769px) {
+    .scroll-type {
+        top: 22%;
+        font-size: 200px;
+    }
+
     .menu {
         right: 20px;
         gap: 15px;
     }
 
     .menu a {
-        font-size: 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .scroll-type {
+        top: 22%;
+        font-size: 120px;
+    }
+
+    .scroll-img {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 470px;
+        height: 600px;
+        overflow: hidden;
+        z-index: 6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        padding: 20px 0;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .slide {
+        flex: 0 0 120px;
+        height: 120px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 376px){
+    .scroll-type {
+        font-size: 100px;
+    }
+
+    .menu a {
+        font-size: 14px;
     }
 }
